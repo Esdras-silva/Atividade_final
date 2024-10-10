@@ -1,4 +1,6 @@
-import limitar_lista
+from utils.limitar_lista import limitar_lista
+
+
 lista = []
 
 
