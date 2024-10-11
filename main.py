@@ -23,17 +23,25 @@ def busca():
     for i in range(len(lista)):
         if termo in lista[i]["nome"] or termo in str(lista[i]["ano"]) or termo in str(lista[i]["extensão"]):#Transforma os numeros em str para poder inteirar
             print(lista[i])
-def imprimir():
+
+def imprimir(i):
+    exten = lista[i]["extensão"]#coloca o item dentro da variavel
+    if type(exten) == float:#verifica se a variavel é do tipo float
+        print(f"{lista[i]["nome"]}\t extensão: {lista[i]["extensão"]:.3f} KM\t ano de criação: {lista[i]["ano"]}")#se a variavel for float usa :.3f
+    else:
+            print(f"{lista[i]["nome"]}\t extensão: {lista[i]["extensão"]:>5} KM\t ano de criação: {lista[i]["ano"]}")#se for int o numero é printado alinhado a direita
+            #esse if tem objetivos simplesmente esteticos para um print padronizado
+
+def imprimir_tudo():
+    print("Todas as rodovias")
     for i in range(len(lista)):
-        print
+        imprimir(i) # tava compreguiça de escrever duas vezes por isso transformei em função
 
 def imprimir_parte():
-    print("Existem {len(lista) rodovias cadastradas }")
-    inicio = int(input("Qual o indice do numero inicial: "))
-    final = int(input("Qual o indice do ultimo elemento a ser impress: "))
+    print(f"Existem {len(lista)} rodovias cadastradas ")
+    inicio = int(input("Qual o indice da primeira rodovia a ser impressa: "))
+    final = int(input("Qual o indice do ultimo elemento a ser impressa: "))
 
     for i in range(inicio-1,final):
-        print(f"{lista[i]["nome"]}  {lista[i]["extensão"]}  {lista[i]["ano"]}")
+        imprimir(i)
 
-busca()
-imprimir_parte()
