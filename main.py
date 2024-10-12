@@ -1,4 +1,5 @@
 from utils.limitar_lista import limitar_lista
+from assets.menssages import * 
 
 
 lista = [{
@@ -14,7 +15,14 @@ lista = [{
     "nome": "Perimetral",
     "extensao": 24,
     "ano": 2000
+},{
+    "nome": "Arthur",
+    "extensao": 15,
+    "ano": 2004
 }]
+
+
+
 
 
 
@@ -40,5 +48,25 @@ def busca():
             print(lista[i])
 
 
-busca()
+def imprimir():
+   
+    print(opcao_imprimir())
+    
+    opcao = int(input("Escolha uma opção: "))
+
+   
+    if opcao == 1 :
+      print_imprimir(lista)
+       
+            
+    elif opcao == 2:
+        
+        trecho = input("Digite um o trecho que você quer imprimir (Separe por espaço ex: 1 5): ")
+        trecho_formatado = list(map(int, trecho.split()))
+        
+        print_imprimir(lista[trecho_formatado[0]-1:trecho_formatado[1]])
+      
+    else:
+        raise Exception("Opção errada")
+    
 
