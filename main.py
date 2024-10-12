@@ -11,13 +11,14 @@ def cadastro():
     ano = int(input("Digite o ano de criação dela: "))
 
     if limitar_lista(lista):
-      print("Armazenamento cheio")
-    else:
-         lista.append({
+       lista.append({
         "nome": nome,
         "extensao": extensao,
         "ano":  ano
-    })
+        })
+    else:
+        print("Armazenamento cheio")
+  
 
 def busca():
     termo = input("digite a rodovia que deseja pesquisar: ").upper()#pega o termo digitado para busca e transforma em maiusculo
