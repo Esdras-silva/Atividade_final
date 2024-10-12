@@ -1,6 +1,8 @@
 from utils.limitar_lista import limitar_lista
-lista = []
+from assets.menssages import * 
 
+
+lista = []
 
 def cadastro():
     nome = input("Digite o nome da rodovia: ")
@@ -17,19 +19,33 @@ def cadastro():
         print("Armazenamento cheio")
   
 
-def buscar(campo: str ,valor):
-
-    def filtro_da_lista(item):
-        return item == valor
-    nova_lista = list(lista[i][campo] for i in range(len(lista)))
-
-
-    lista_filtrada = list(filter(filtro_da_lista, nova_lista))
-
-    print(lista_filtrada)
+def busca():
+    termo = input("digite a rodovia que deseja pesquisar: ").upper()#pega o termo digitado para busca e transforma em maiusculo
+    for i in range(len(lista)):
+        if termo in lista[i]["nome"] or termo in str(lista[i]["ano"]) or termo in str(lista[i]["extensao"]):#Transforma os numeros em str para poder inteirar
+            print(lista[i])
 
 
-for _ in range(2):
-    cadastro()
+def imprimir():
+   
+    print(opcao_imprimir())
+    
+    opcao = int(input("Escolha uma opção: "))
 
-buscar("ano", 2000)
+   
+    if opcao == 1 :
+      print_imprimir(lista)
+       
+            
+    elif opcao == 2:
+        
+        trecho = input("Digite um o trecho que você quer imprimir (Separe por espaço ex: 1 5): ")
+        trecho_formatado = list(map(int, trecho.split()))
+        
+        print_imprimir(lista[trecho_formatado[0]-1:trecho_formatado[1]])
+      
+    else:
+        raise Exception("Opção errada")
+    
+
+
