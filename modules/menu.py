@@ -1,7 +1,8 @@
 import sys
-sys.path.append('c:/Users/Esdras Silva/Documents/Faculdade/Atividade_final')
+sys.path.append(path_for_modules())
 
-from utils.validacoes import confirmar_saida,validar_entrada
+from path import path_for_modules
+from utils.validacoes import confirmar_saida, validar_entrada
 from utils.timer import timer
 from modules.cadastrar import cadastrar
 from modules.impressao import imprimir_todas, imprimir_trecho
@@ -58,16 +59,18 @@ def menu_imprimir():
     
 
 def menu_principal():
+    
     print(messagem_inicial())
     opt = None
     while opt != 5:
         try:
+            timer()
             print(opção_menu())
             opt = validar_entrada("Escolha uma opção: ")
 
             if opt == 1:
-                #cadastrar()
-                print()
+                cadastrar()
+            
             elif opt == 2:
                 pesquisa()
             elif opt == 3:
@@ -78,5 +81,6 @@ def menu_principal():
                 else:
                     opt = None
         except KeyboardInterrupt:
-            print("\n Vcê não popde interromper o programa pelo teclado. Para sair, escolha a opção 4.")
-            timer()
+            print("\n Você não popde interromper o programa pelo teclado. Para sair, escolha a opção 4.")
+            continue
+          

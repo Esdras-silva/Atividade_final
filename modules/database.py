@@ -1,6 +1,3 @@
-import sys
-sys.path.append('c:/Users/Esdras Silva/Documents/Faculdade/Atividade_final')
-
 from utils.imprimir import imprimir
 
 from utils.limitar_lista import limitar_lista

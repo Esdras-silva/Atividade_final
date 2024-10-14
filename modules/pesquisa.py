@@ -1,4 +1,8 @@
-from database import buscar_rodovias
+import sys
+from utils.path import path_for_modules
+sys.path.append(path_for_modules('modules'))
+
+from modules.database import buscar_rodovias
 def messagem_pesquisa() -> str:
     return '''
  ---------------------- PESQUISA ----------------------
