@@ -48,7 +48,7 @@ def opção_imprimir():
 def menu_imprimir():
     opt_imprimir = 0
     while opt_imprimir != 3:
-        print(opt_imprimir())
+        print(opção_imprimir())
         opt_imprimir = validar_entrada("Escolha uma opção: ")
         if opt_imprimir == 1:
             imprimir_todas()
