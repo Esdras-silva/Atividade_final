@@ -1,5 +1,11 @@
-from utils.limitar_lista import limitar_lista
+import sys
+sys.path.append('c:/Users/Esdras Silva/Documents/Faculdade/Atividade_final')
+
 from utils.imprimir import imprimir
+
+from utils.limitar_lista import limitar_lista
+
+
 
 database = []
 
@@ -15,9 +21,9 @@ def buscar_rodovias(campo: str, termo: str):
     for i in range(len(database)):
         if termo in database[i]["nome"] and campo == 'nome' :
             print(database[i])
-        elif termo in str(database[i]["ano"]) and campo == 'ano':
+        elif termo in str(database[i]["ano de criação"]) and campo == 'ano de criação':
             print(database[i])
-        elif termo in str(database[i]["extensao"]):
+        elif termo in str(database[i]["extensão"]):
             print(database[i])
 
 def imprimir_rodovias():
