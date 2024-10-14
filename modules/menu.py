@@ -1,8 +1,12 @@
+import sys
+sys.path.append('c:/Users/Esdras Silva/Documents/Faculdade/Atividade_final')
+
 from utils.validacoes import confirmar_saida,validar_entrada
 from utils.timer import timer
-from cadastrar import cadastrar
-from impressao import imprimir_todas, imprimir_trecho
-from pesquisa import pesquisa
+from modules.cadastrar import cadastrar
+from modules.impressao import imprimir_todas, imprimir_trecho
+from modules.pesquisa import pesquisa
+
 def messagem_inicial() -> str :
     return '''
 -------------------- BEM VINDO(A) AO REGISTRADOR DE RODOVIAS --------------------
@@ -54,6 +58,7 @@ def menu_imprimir():
     
 
 def menu_principal():
+    print(messagem_inicial())
     opt = None
     while opt != 5:
         try:
@@ -61,7 +66,8 @@ def menu_principal():
             opt = validar_entrada("Escolha uma opção: ")
 
             if opt == 1:
-                cadastrar()
+                #cadastrar()
+                print()
             elif opt == 2:
                 pesquisa()
             elif opt == 3:

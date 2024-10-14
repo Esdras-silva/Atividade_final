@@ -26,7 +26,7 @@ def buscar_rodovias(campo: str, termo: str):
         elif termo in str(database[i]["extensão"]):
             print(database[i])
         else:
-            print(f"Não tem nenhuma rodovia com {"essa" if campo == 'extensão' else "esse"} {campo}!!")
+            print(f"Não tem nenhuma rodovia com {'essa' if campo == 'extensão' else 'esse'} {campo}!!")
 
 def imprimir_rodovias():
     for i in range(len(database)):

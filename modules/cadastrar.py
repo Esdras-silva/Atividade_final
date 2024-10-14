@@ -1,4 +1,4 @@
-from database import adicionar_rodovia
+from modules.database import adicionar_rodovia
 
 def cadastrar():
      nome = input("Digite o nome da rodovia: ")

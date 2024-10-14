@@ -1,4 +1,5 @@
-from timer import timer
+
+from utils.timer import timer
 
 def validar_entrada(messagem) -> int :
     while True:
