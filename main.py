@@ -12,7 +12,3 @@ def cadastro():
         "ano":  ano
     })
 
-for i in range(2):
-    cadastro()
-
-print(lista)
