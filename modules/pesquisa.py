@@ -1,6 +1,6 @@
 import sys
 from utils.path import path_for_modules
-sys.path.append(path_for_modules('modules'))
+sys.path.append(path_for_modules())
 
 from modules.database import buscar_rodovias
 def messagem_pesquisa() -> str:

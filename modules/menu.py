@@ -1,7 +1,8 @@
 import sys
+from utils.path import path_for_modules
 sys.path.append(path_for_modules())
 
-from path import path_for_modules
+
 from utils.validacoes import confirmar_saida, validar_entrada
 from utils.timer import timer
 from modules.cadastrar import cadastrar
@@ -78,6 +79,8 @@ def menu_principal():
             elif opt == 4:
                 if confirmar_saida():
                     opt = 5
+                    print("Saindo....")
+                    timer()
                 else:
                     opt = None
         except KeyboardInterrupt:
