@@ -11,4 +11,3 @@ def cadastrar():
           "ano": ano
      }))
 
-cadastrar()
