@@ -6,7 +6,7 @@ def validar_entrada(messagem) -> int :
         try:
             return int(input(messagem))
         except ValueError:
-            print("Entrad invalida! Por favor, insira um número válido.")
+            print("Entrada invalida! Por favor, insira um número válido.")
             timer()
         
 

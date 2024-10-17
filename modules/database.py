@@ -14,16 +14,16 @@ def adicionar_rodovia(rodovia: dict) -> str:
         return "Armazenamento cheio!"
 
 def buscar_rodovias(campo: str, termo: str):
+    encontrado = False  # flag para verificar se encontrou algo
     
     for i in range(len(database)):
-        if termo in database[i]["nome"] and campo == 'nome' :
-            print(database[i])
-        elif termo in str(database[i]["ano de criação"]) and campo == 'ano de criação':
-            print(database[i])
-        elif termo in str(database[i]["extensão"]):
-            print(database[i])
-        else:
-            print(f"Não tem nenhuma rodovia com {'essa' if campo == 'extensão' else 'esse'} {campo}!!")
+        item = str(database[i][campo])
+        if termo in item.lower() :
+            imprimir(database,i)
+            encontrado = True
+    
+    if not encontrado:
+        print(f"Não tem nenhuma rodovia com {'essa' if campo == 'extensão' else 'esse'} {campo}!!")
 
 def imprimir_rodovias():
     for i in range(len(database)):

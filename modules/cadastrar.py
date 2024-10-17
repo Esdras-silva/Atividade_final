@@ -7,7 +7,7 @@ def cadastrar():
 
      print(adicionar_rodovia({
           "nome": nome,
-          "extensao": extensao,
-          "ano": ano
+          "extensão": extensao,
+          "ano de criação": ano
      }))
 
