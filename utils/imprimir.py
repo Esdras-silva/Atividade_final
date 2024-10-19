@@ -1,8 +1,6 @@
 def imprimir(database: list, i: int):
-    exten = database[i]["extensão"]#coloca o item dentro da variavel
-    if type(exten) == float:#verifica se a variavel é do tipo float
-      print(f"{database[i]['nome']}\t extensão: {database[i]['extensão']:.3f} KM\t ano de criação: {database[i]['ano de criação']}")
+    extensao = database[i]["extensão"]#coloca o item dentro da variavel
+    if extensao.is_integer():#Verifica se o numero float é inteiro ou quebrado( serve pra caso dê 340.0 pra não confundir com 340 mil)
+      print(f"{database[i]['nome']}\t extensão: {int(extensao):>5} KM\t ano de criação: {database[i]['ano de criação']}")
     else:
-           print(f"{database[i]['nome']}\t extensão: {database[i]['extensão']:.>5} KM\t ano de criação: {database[i]['ano de criação']}")
-#se for int o numero é printado alinhado a direita
-            #esse if tem objetivos simplesmente esteticos para um print padronizado
+      print(f"{database[i]['nome']}\t extensão: {extensao:.3f} KM\t ano de criação: {database[i]['ano de criação']}")#imprime 4.900 em vez de 4.9
